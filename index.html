@@ -4,35 +4,12 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Cauan Takeda — Arquitetura</title>
-<!-- SEO Meta Tags -->
-<meta name="description" content="Portfólio de arquitetura de Cauan Takeda. Projetos residenciais e comerciais com design contemporâneo e sustentável.">
-<meta name="author" content="Cauan Takeda">
-<meta name="keywords" content="arquitetura, design, projetos, residencial, comercial, Cauan Takeda">
-<meta name="robots" content="index, follow">
-
-<!-- Open Graph / Facebook -->
-<meta property="og:type" content="website">
-<meta property="og:url" content="https://cauantakeda.com/">
-<meta property="og:title" content="Cauan Takeda — Arquitetura">
-<meta property="og:description" content="Portfólio de arquitetura de Cauan Takeda. Projetos residenciais e comerciais com design contemporâneo e sustentável.">
-<meta property="og:image" content="https://cauantakeda.com/og-image.jpg">
-
-<!-- Twitter Card -->
-<meta property="twitter:card" content="summary_large_image">
-<meta property="twitter:url" content="https://cauantakeda.com/">
-<meta property="twitter:title" content="Cauan Takeda — Arquitetura">
-<meta property="twitter:description" content="Portfólio de arquitetura de Cauan Takeda. Projetos residenciais e comerciais com design contemporâneo e sustentável.">
-<meta property="twitter:image" content="https://cauantakeda.com/og-image.jpg">
-
-<!-- Favicon SVG -->
-<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E🏛️%3C/text%3E%3C/svg%3E">
-
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,700;1,400&family=Libre+Franklin:wght@300;400;500;600&family=Space+Mono:wght@400;700&family=Archivo+Black&family=Archivo:wght@400;500;600;700&display=swap" rel="stylesheet">
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" integrity="sha512-7GqVAMbU2xlhqUMoMzKjzKjzKjzKjzKjzKjzKjzKjzKjzKjzKjzKjzKjzKjz" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" integrity="sha512-L3nSOLqHKqVPkpD7FSBjhU4sNKgqLJKlA9tZ6hqbqLJKlA9tZ6hqbqLJKlA9tZ6hqbqLJKlA9tZ6hqbqLJKlA9" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollToPlugin.min.js" integrity="sha512-M3nSOLqHKqVPkpD7FSBjhU4sNKgqLJKlA9tZ6hqbqLJKlA9tZ6hqbqLJKlA9tZ6hqbqLJKlA9tZ6hqbqLJKlA9" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-<script src="https://unpkg.com/lenis@1.1.14/dist/lenis.min.js" integrity="sha512-V1nSOLqHKqVPkpD7FSBjhU4sNKgqLJKlA9tZ6hqbqLJKlA9tZ6hqbqLJKlA9tZ6hqbqLJKlA9tZ6hqbqLJKlA9" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollToPlugin.min.js"></script>
+<script src="https://unpkg.com/lenis@1.1.14/dist/lenis.min.js"></script>
 <style>
 :root{
   --ink:#0a0908;
@@ -638,57 +615,7 @@ body.theme-cyberpunk, body.theme-cyberpunk *{ cursor:none !important; }
 #backToTop:hover{opacity:1;border-color:var(--oxblood-bright);background:rgba(255,255,255,.04);}
 @media(max-width:760px){#backToTop{right:24px;bottom:24px;width:40px;height:40px;}}
 </style>
-
-<!-- Plausible Analytics (GDPR compliant) -->
-<script defer data-domain="cauantakeda.com" src="https://plausible.io/js/script.js"></script>
-
-<!-- PWA Manifest -->
-<link rel="manifest" href="/manifest.json">
-<script>
-// Safe Storage Fallback - localStorage com fallback para memória
-window.safeStorage = (function() {
-  var storage;
-  try {
-    var testKey = '__storage_test__';
-    window.window.safeStorage.setItem(testKey, testKey);
-    window.window.safeStorage.removeItem(testKey);
-    storage = window.localStorage;
-    return {
-      getItem: function(key) { try { return storage.getItem(key); } catch(e) { return null; } },
-      setItem: function(key, value) { try { storage.setItem(key, value); } catch(e) {} },
-      removeItem: function(key) { try { storage.removeItem(key); } catch(e) {} },
-      clear: function() { try { storage.clear(); } catch(e) {} }
-    };
-  } catch(e) {
-    storage = {};
-    return {
-      getItem: function(key) { return storage[key] || null; },
-      setItem: function(key, value) { storage[key] = String(value); },
-      removeItem: function(key) { delete storage[key]; },
-      clear: function() { storage = {}; }
-    };
-  }
-})();
-
-// Video Error Handler - Handler de erros de vídeo com feedback
-function handleVideoError(videoEl) {
-  if (!videoEl) return;
-  var errorMsg = 'Vídeo não disponível';
-  if (videoEl.error) {
-    switch(videoEl.error.code) {
-      case MediaError.MEDIA_ERR_ABORTED: errorMsg = 'Carregamento abortado'; break;
-      case MediaError.MEDIA_ERR_NETWORK: errorMsg = 'Erro de rede'; break;
-      case MediaError.MEDIA_ERR_DECODE: errorMsg = 'Erro de decodificação'; break;
-      case MediaError.MEDIA_ERR_SRC_NOT_SUPPORTED: errorMsg = 'Formato não suportado'; break;
-    }
-  }
-  // Reportar erro ao analytics se disponível
-  if (typeof plausible !== 'undefined') {
-    plausible('video-error', {props: {message: errorMsg, src: videoEl.src || 'unknown'}});
-  }
-  console.warn('Video error:', errorMsg, videoEl.src);
-}
-</script></head>
+</head>
 <body>
 
 <a class="skip-link" href="#mainSite">Pular para o conteúdo principal</a>
@@ -773,7 +700,7 @@ function handleVideoError(videoEl) {
 </nav>
 
 <div class="hero">
-  <video class="hero-bg" id="heroBgVideo" muted loop playsinline preload="auto" onerror="handleVideoError(this)"></video>
+  <video class="hero-bg" id="heroBgVideo" muted loop playsinline preload="auto"></video>
   <div class="hero-fade"></div>
   <svg class="hero-crest" id="heroCrest" viewBox="0 0 400 400" aria-hidden="true">
     <path class="crest-path" d="M200,170 C170,170 150,140 150,100 C150,60 175,35 200,40 C225,35 250,60 250,100 C250,140 230,170 200,170 Z"/>
@@ -1296,7 +1223,7 @@ projects.forEach(p=>{
   // (em vez de repetir o mesmo clipe duas vezes na página, numa seção separada mais abaixo).
   const mediaHtml = p.video
     ? `<div class="project-media reveal-media">
-        <video data-scroll-video src="${p.video}" poster="${p.img}" muted loop playsinline preload="metadata" onerror="handleVideoError(this)"></video>
+        <video data-scroll-video src="${p.video}" poster="${p.img}" muted loop playsinline preload="metadata"></video>
         <button class="v-mute" data-v-mute title="Ativar/desativar som">🔇</button>
       </div>`
     : `<div class="project-media reveal-media">
@@ -1723,7 +1650,7 @@ const THEME_ORDER = ['default','cyberpunk','grayscale'];
 let currentTheme = null;
 
 function loadSavedTheme(){
-  try{ const s = window.safeStorage.getItem('site-theme'); if(s && THEMES[s]) return s; }catch(e){}
+  try{ const s = localStorage.getItem('site-theme'); if(s && THEMES[s]) return s; }catch(e){}
   return 'default';
 }
 
@@ -1772,7 +1699,7 @@ function applyTheme(themeId, immediate=false){
   setMagnetic(cfg.behaviors.magnetic);
   setScramble(cfg.behaviors.scramble);
 
-  try{ window.safeStorage.setItem('site-theme', cfg.id); }catch(e){}
+  try{ localStorage.setItem('site-theme', cfg.id); }catch(e){}
   renderThemePanel(cfg.id);
 }
 
